@@ -1,5 +1,9 @@
 FROM alpine:3.24
 
+# WordPress
+ARG WORDPRESS_VERSION
+ARG WORDPRESS_SHA1
+
 # Build arguments for OCI annotations
 ARG BUILD_DATE
 ARG VERSION
@@ -64,10 +68,6 @@ COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 VOLUME /var/www/wp-content
 WORKDIR /var/www/wp-content
 RUN chown -R nobody:nobody /var/www
-
-# WordPress
-ENV WORDPRESS_VERSION=7.1.3
-ENV WORDPRESS_SHA1=491a78c7676b15dffcc69130c6054b8f49228a91
 
 RUN mkdir -p /usr/src
 
