@@ -1,4 +1,4 @@
-FROM alpine:3.24
+FROM alpine:3.24.4
 
 # WordPress
 ARG WORDPRESS_VERSION
@@ -23,8 +23,8 @@ LABEL org.opencontainers.image.description="Lightweight WordPress container with
 
 # Install packages
 RUN apk --no-cache add \
-  'php85>=8.5.12' \
-  'php85-fpm>=8.5.12' \
+  'php85>=8.5.13' \
+  'php85-fpm>=8.5.13' \
   php85-mysqli \
   php85-json \
   php85-openssl \
